@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Items} from './Items'
+import NewItem from './NewItem'
 // import {Checkbox, FormControlLabel} from '@material-ui/core'
 
 const groceries = [
@@ -12,6 +13,12 @@ const groceries = [
 class App extends Component {
   state = {
     items: groceries,
+  }
+
+  addItem = item => {
+    this.setState({
+      items: [...this.state.items, item],
+    })
   }
 
   checkOffItem = selectedItem => {
@@ -38,10 +45,12 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
+        <NewItem addItem={this.addItem} />
         <Items
           items={this.state.items}
           checkOffItem={this.checkOffItem}
           removeItem={this.removeItem}
+          addItem={this.addItem}
         />
       </div>
     )
