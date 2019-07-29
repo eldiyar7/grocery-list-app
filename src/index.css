@@ -13,6 +13,10 @@
   align-items: flex-start;
 }
 
+.checkbox-label {
+  cursor: pointer;
+}
+
 .checkbox {
   display: inline-flex;
   vertical-align: middle;

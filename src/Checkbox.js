@@ -14,7 +14,7 @@ function Checkbox(props) {
     <span className="checkbox">
       <input type="checkbox" {...props} />
       <svg
-        class="checkbox-icon"
+        className="checkbox-icon"
         focusable="false"
         viewBox="0 0 24 24"
         aria-hidden="true"
