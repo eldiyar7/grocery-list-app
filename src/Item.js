@@ -1,5 +1,6 @@
 import React from 'react'
-import Checkbox from './Checkbox'
+import Checkbox from './common/Checkbox'
+import Button from './common/Button'
 
 function Item({item, onCheckOff}) {
   return (
@@ -11,9 +12,7 @@ function Item({item, onCheckOff}) {
         />
         {item.name}
       </label>
-      <button className="button">
-        <span className="button-label">Remove</span>
-      </button>
+      <Button />
     </div>
   )
 }
