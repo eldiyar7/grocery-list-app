@@ -2,7 +2,7 @@ import React from 'react'
 import Checkbox from './common/Checkbox'
 import Button from './common/Button'
 
-function Item({item, onCheckOff}) {
+function Item({item, onCheckOff, onRemoveItem}) {
   return (
     <div className="item-container">
       <label className="checkbox-label">
@@ -12,7 +12,7 @@ function Item({item, onCheckOff}) {
         />
         {item.name}
       </label>
-      <Button />
+      <Button onClick={() => onRemoveItem(item)} label="remove" />
     </div>
   )
 }

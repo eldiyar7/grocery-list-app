@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Button() {
+function Button(props) {
   return (
-    <button className="button">
-      <span className="button-label">Remove</span>
+    <button {...props} className="button">
+      <span className="button-label">{props.label}</span>
     </button>
   )
 }

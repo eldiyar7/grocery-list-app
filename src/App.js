@@ -6,7 +6,7 @@ const groceries = [
   {name: 'apple', id: 1, grabbed: false},
   {name: 'milk', id: 2, grabbed: false},
   {name: 'water', id: 3, grabbed: false},
-  {name: 'potatoes', id: 4, grabbed: true},
+  {name: 'potatoes', id: 4, grabbed: false},
 ]
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
     items: groceries,
   }
 
-  checkOff = selectedItem => {
+  checkOffItem = selectedItem => {
     const updatedItems = this.state.items.map(item => {
       if (item.id === selectedItem.id) {
         return {...item, grabbed: !selectedItem.grabbed}
@@ -27,10 +27,22 @@ class App extends Component {
     })
   }
 
+  removeItem = selectedItem => {
+    this.setState({
+      items: this.state.items.filter(
+        item => item.id !== selectedItem.id,
+      ),
+    })
+  }
+
   render() {
     return (
       <div className="app-container">
-        <Items items={this.state.items} onCheckOff={this.checkOff} />
+        <Items
+          items={this.state.items}
+          checkOffItem={this.checkOffItem}
+          removeItem={this.removeItem}
+        />
       </div>
     )
   }

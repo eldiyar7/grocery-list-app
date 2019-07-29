@@ -3,13 +3,17 @@ import Item from './Item'
 
 class Items extends Component {
   render() {
-    const {items, onCheckOff} = this.props
-
+    const {items, checkOffItem, removeItem} = this.props
     return (
       <div className="items-container">
         {items.map(item => {
           return (
-            <Item item={item} onCheckOff={onCheckOff} key={item.id} />
+            <Item
+              item={item}
+              onCheckOff={checkOffItem}
+              onRemoveItem={removeItem}
+              key={item.id}
+            />
           )
         })}
       </div>
