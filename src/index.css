@@ -5,13 +5,11 @@
   margin-right: auto;
   padding-left: 16px;
   padding-right: 16px;
-  border: 1px solid blue;
 }
 
 .items-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
 }
 
 .item-container {
