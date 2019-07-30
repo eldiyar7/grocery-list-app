@@ -36,7 +36,9 @@ class NewItem extends Component {
               onChange={this.handleChange}
               value={this.state.value}
             />
-            <Button onClick={this.onAddItem}>Add</Button>
+            <Button onClick={this.onAddItem} color="primary">
+              Add
+            </Button>
           </Card>
         </div>
       </div>

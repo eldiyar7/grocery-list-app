@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {Items} from './Items'
 import NewItem from './NewItem'
-// import {Checkbox, FormControlLabel} from '@material-ui/core'
 import Title from './common/Title'
+import Button from '@material-ui/core/Button'
 
 const groceries = [
   {name: 'apple', id: 1, grabbed: false},
