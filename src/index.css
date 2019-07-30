@@ -1,3 +1,14 @@
+body {
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0;
+  font-size: 0.875rem;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  background-color: #fff;
+}
+
 .app-container {
   width: 100%;
   box-sizing: border-box;
@@ -7,33 +18,9 @@
   padding-right: 16px;
 }
 
-.items-container {
-  display: flex;
-  flex-direction: column;
-}
-
 .item-container {
   display: flex;
   justify-content: space-between;
-}
-
-.item-form {
-  margin: 12px 0;
-}
-
-.item-form input {
-  font: inherit;
-  color: currentColor;
-  width: 100%;
-  border: 0;
-  height: 1.1875em;
-  margin: 0;
-  display: block;
-  padding: 6px 0 7px;
-  min-width: 0;
-  background: none;
-  box-sizing: content-box;
-  outline: none;
 }
 
 @media (min-width: 0px) {

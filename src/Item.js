@@ -12,7 +12,7 @@ function Item({item, onCheckOff, onRemoveItem}) {
         />
         {item.name}
       </label>
-      <Button onClick={() => onRemoveItem(item)} label="remove" />
+      <Button onClick={() => onRemoveItem(item)}>Remove</Button>
     </div>
   )
 }

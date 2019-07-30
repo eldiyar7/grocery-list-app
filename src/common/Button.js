@@ -5,7 +5,7 @@ import './button.css'
 function Button(props) {
   return (
     <button {...props} className="button">
-      <span className="button-label">{props.label}</span>
+      <span>{props.children}</span>
     </button>
   )
 }

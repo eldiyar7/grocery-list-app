@@ -2,13 +2,7 @@ import React, {Component} from 'react'
 import Button from './common/Button'
 import Card from './common/Card'
 
-// find pattern for passing custom class names which don't override default ones
-const styles = {
-  card: {
-    padding: '2px 4px',
-    display: 'flex',
-  },
-}
+import './newItem.css'
 
 class NewItem extends Component {
   state = {
@@ -36,13 +30,13 @@ class NewItem extends Component {
     return (
       <div>
         <div className="item-form">
-          <Card style={styles.card}>
+          <Card className="new-item-card">
             <input
               type="text"
               onChange={this.handleChange}
               value={this.state.value}
             />
-            <Button onClick={this.onAddItem} label="Add" />
+            <Button onClick={this.onAddItem}>Add</Button>
           </Card>
         </div>
       </div>

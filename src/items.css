@@ -1,0 +1,8 @@
+.items-card {
+  padding: 4px;
+}
+
+.items-container {
+  display: flex;
+  flex-direction: column;
+}
