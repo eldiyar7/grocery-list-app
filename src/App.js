@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Items} from './Items'
 import NewItem from './NewItem'
 // import {Checkbox, FormControlLabel} from '@material-ui/core'
+import Typography from '@material-ui/core/Typography'
 
 const groceries = [
   {name: 'apple', id: 1, grabbed: false},
@@ -44,8 +45,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app-container">
+      <div className="container">
         <NewItem addItem={this.addItem} />
+        <h3 className="title">
+          Unpacked Items ({this.state.items.length})
+        </h3>
         <Items
           items={this.state.items}
           checkOffItem={this.checkOffItem}
