@@ -1,0 +1,15 @@
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  min-width: 64px;
+  cursor: pointer;
+  color: #f50057;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: rgba(245, 0, 87, 0.08);
+}
