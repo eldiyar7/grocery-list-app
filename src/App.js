@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Items} from './Items'
 import NewItem from './NewItem'
 // import {Checkbox, FormControlLabel} from '@material-ui/core'
-import Typography from '@material-ui/core/Typography'
+import Title from './common/Title'
 
 const groceries = [
   {name: 'apple', id: 1, grabbed: false},
@@ -47,15 +47,18 @@ class App extends Component {
     return (
       <div className="container">
         <NewItem addItem={this.addItem} />
-        <h3 className="title">
+        <Title component="h3">
           Unpacked Items ({this.state.items.length})
-        </h3>
+        </Title>
         <Items
           items={this.state.items}
           checkOffItem={this.checkOffItem}
           removeItem={this.removeItem}
           addItem={this.addItem}
         />
+        <Title component="h3">
+          Packed Items ({this.state.items.length})
+        </Title>
       </div>
     )
   }
