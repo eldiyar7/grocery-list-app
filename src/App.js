@@ -44,21 +44,32 @@ class App extends Component {
   }
 
   render() {
+    const ungrabbedItems = this.state.items.filter(
+      item => !item.grabbed,
+    )
+    const grabbedItems = this.state.items.filter(item => item.grabbed)
+
     return (
       <div className="container">
         <NewItem addItem={this.addItem} />
         <Title component="h3">
-          Unpacked Items ({this.state.items.length})
+          Ungrabbed Items ({ungrabbedItems.length})
         </Title>
         <Items
-          items={this.state.items}
+          items={ungrabbedItems}
           checkOffItem={this.checkOffItem}
           removeItem={this.removeItem}
           addItem={this.addItem}
         />
         <Title component="h3">
-          Packed Items ({this.state.items.length})
+          Grabbed Items ({grabbedItems.length})
         </Title>
+        <Items
+          items={grabbedItems}
+          checkOffItem={this.checkOffItem}
+          removeItem={this.removeItem}
+          addItem={this.addItem}
+        />
       </div>
     )
   }
