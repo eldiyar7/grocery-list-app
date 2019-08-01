@@ -1,10 +1,10 @@
-.item-add {
+.item-filter {
   margin: 12px 0;
   display: flex;
   padding: 4px;
 }
 
-.item-add input {
+.item-filter input {
   font: inherit;
   color: currentColor;
   width: 100%;

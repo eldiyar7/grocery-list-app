@@ -3,6 +3,7 @@ import {Items} from './Items'
 import NewItem from './NewItem'
 import Title from './common/Title'
 import Button from '@material-ui/core/Button'
+import Filter from './Filter'
 
 const groceries = [
   {name: 'apple', id: 1, grabbed: false},
@@ -50,11 +51,12 @@ class App extends Component {
     const grabbedItems = this.state.items.filter(item => item.grabbed)
 
     return (
-      <div className="container">
+      <div className="container container-custom">
         <NewItem addItem={this.addItem} />
         <Title component="h3">
           Ungrabbed Items ({ungrabbedItems.length})
         </Title>
+        <Filter />
         <Items
           items={ungrabbedItems}
           checkOffItem={this.checkOffItem}

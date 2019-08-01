@@ -18,6 +18,12 @@ body {
   padding-right: 16px;
 }
 
+.container-custom {
+  background-color: #f5f5f5;
+  padding: 25px;
+  box-sizing: inherit;
+}
+
 @media (min-width: 0px) {
   .container {
     max-width: 444px;

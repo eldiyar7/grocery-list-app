@@ -28,20 +28,16 @@ class NewItem extends Component {
 
   render() {
     return (
-      <div>
-        <div className="item-form">
-          <Card className="new-item-card">
-            <input
-              type="text"
-              onChange={this.handleChange}
-              value={this.state.value}
-            />
-            <Button onClick={this.onAddItem} color="primary">
-              Add
-            </Button>
-          </Card>
-        </div>
-      </div>
+      <Card className="item-add">
+        <input
+          type="text"
+          onChange={this.handleChange}
+          value={this.state.value}
+        />
+        <Button onClick={this.onAddItem} color="primary">
+          Add
+        </Button>
+      </Card>
     )
   }
 }
