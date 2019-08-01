@@ -11,7 +11,9 @@ function Button(props) {
   return (
     <button
       {...props}
-      className={`button ${classNames[props.color]}`}
+      className={`button-root button-default ${
+        classNames[props.color]
+      }`}
     >
       <span>{props.children}</span>
     </button>

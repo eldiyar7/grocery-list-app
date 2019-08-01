@@ -1,4 +1,8 @@
-.button {
+.button-root {
+  padding: 0;
+}
+
+.button-default {
   border: 0;
   outline: none;
   border-radius: 4px;
