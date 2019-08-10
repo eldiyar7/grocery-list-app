@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import Card from './common/Card'
 import Button from './common/Button'
 import Icon from './common/Icon'
@@ -11,13 +11,26 @@ const searchButtonStyle = {
   boxShadow: 'none',
 }
 
-export default function Filter() {
-  return (
-    <Card className="item-filter">
-      <input type="text" onChange={() => {}} value={''} />
-      <Button style={searchButtonStyle}>
-        <Icon name="search" />
-      </Button>
-    </Card>
-  )
+class Filter extends Component {
+  handleChange = event => {
+    const value = event.target.value
+    this.props.onChange(value)
+  }
+
+  render() {
+    return (
+      <Card className="item-filter">
+        <input
+          type="text"
+          onChange={this.handleChange}
+          value={this.props.searchTerm}
+        />
+        <Button style={searchButtonStyle}>
+          <Icon name="search" />
+        </Button>
+      </Card>
+    )
+  }
 }
+
+export default Filter

@@ -2,14 +2,12 @@ import React, {Component} from 'react'
 import {Items} from './Items'
 import NewItem from './NewItem'
 import Title from './common/Title'
-import Button from '@material-ui/core/Button'
-import Filter from './Filter'
 
 const groceries = [
   {name: 'apple', id: 1, grabbed: false},
   {name: 'milk', id: 2, grabbed: false},
   {name: 'water', id: 3, grabbed: false},
-  {name: 'potatoes', id: 4, grabbed: false},
+  {name: 'potatoes', id: 4, grabbed: true},
 ]
 
 class App extends Component {
@@ -56,7 +54,6 @@ class App extends Component {
         <Title component="h3">
           Ungrabbed Items ({ungrabbedItems.length})
         </Title>
-        <Filter />
         <Items
           items={ungrabbedItems}
           checkOffItem={this.checkOffItem}
