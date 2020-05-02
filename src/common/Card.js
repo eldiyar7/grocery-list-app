@@ -4,7 +4,7 @@ import './card.css'
 
 function Card({className, ...props}) {
   return (
-    <div className={`card ${className}`} {...props}>
+    <div className={`card-root ${className}`} {...props}>
       {props.children}
     </div>
   )

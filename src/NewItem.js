@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Button from './common/Button'
 import Card from './common/Card'
-
+import Input from './common/Input'
 import './newItem.css'
 
 class NewItem extends Component {
@@ -9,7 +9,7 @@ class NewItem extends Component {
     value: '',
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({
       value: event.target.value,
     })
@@ -28,15 +28,21 @@ class NewItem extends Component {
 
   render() {
     return (
-      <Card className="item-add">
-        <input
-          type="text"
-          onChange={this.handleChange}
-          value={this.state.value}
-        />
-        <Button onClick={this.onAddItem} color="primary">
-          Add
-        </Button>
+      <Card>
+        <div className="new-item-container">
+          <div className="new-item-input">
+            <Input
+              type="text"
+              onChange={this.handleChange}
+              value={this.state.value}
+            />
+          </div>
+          <div className="new-item-add">
+            <Button onClick={this.onAddItem} color="secondary">
+              Add
+            </Button>
+          </div>
+        </div>
       </Card>
     )
   }
