@@ -1,30 +1,30 @@
-import React, {Component} from 'react'
-import Button from './common/Button'
-import Card from './common/Card'
-import Input from './common/Input'
-import './newItem.css'
+import React, {Component} from 'react';
+import Button from './common/Button';
+import Card from './common/Card';
+import Input from './common/Input';
+import './newItem.css';
 
 class NewItem extends Component {
   state = {
     value: '',
-  }
+  };
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({
       value: event.target.value,
-    })
-  }
+    });
+  };
 
   onAddItem = () => {
     this.props.addItem({
       name: this.state.value,
       id: 5,
       grabbed: false,
-    })
+    });
     this.setState({
       value: '',
-    })
-  }
+    });
+  };
 
   render() {
     return (
@@ -44,8 +44,8 @@ class NewItem extends Component {
           </div>
         </div>
       </Card>
-    )
+    );
   }
 }
 
-export default NewItem
+export default NewItem;

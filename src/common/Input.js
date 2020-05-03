@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import './input.css'
+import './input.css';
 
 function Input(props) {
-  return <input {...props} className={'input-root'} />
+  return <input {...props} className={'input-root'} />;
 }
 
-export default Input
+export default Input;
