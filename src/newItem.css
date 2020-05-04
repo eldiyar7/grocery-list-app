@@ -9,4 +9,5 @@
 
 .new-item-input {
   flex-basis: 75%;
+  line-height: 21px;
 }
