@@ -1,21 +1,33 @@
-import React, {Component} from 'react'
-import Item from './Item'
-import Card from './common/Card'
-import Filter from './Filter'
+import React, { Component } from 'react';
+import Item from './Item';
+import Card from './common/Card';
+import Filter from './Filter';
 
-import './items.css'
+import './items.css';
 
 class Items extends Component {
   state = {
     searchTerm: '',
-  }
+  };
 
   updateSearchTerm = searchTerm => {
-    this.setState({searchTerm})
-  }
+    this.setState({ searchTerm });
+  };
+
+  renderItems = item => {
+    const { checkOffItem, removeItem } = this.props;
+    return (
+      <Item
+        item={item}
+        onCheckOff={checkOffItem}
+        onRemoveItem={removeItem}
+        key={item.id}
+      />
+    );
+  };
 
   render() {
-    const {items, checkOffItem, removeItem} = this.props
+    const { items } = this.props;
     return (
       <div>
         <Filter
@@ -30,20 +42,11 @@ class Items extends Component {
                 .toLowerCase()
                 .includes(this.state.searchTerm.toLowerCase()),
             )
-            .map(item => {
-              return (
-                <Item
-                  item={item}
-                  onCheckOff={checkOffItem}
-                  onRemoveItem={removeItem}
-                  key={item.id}
-                />
-              )
-            })}
+            .map(this.renderItems)}
         </Card>
       </div>
-    )
+    );
   }
 }
 
-export {Items}
+export { Items };

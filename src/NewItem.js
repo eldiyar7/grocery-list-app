@@ -1,51 +1,41 @@
-import React, {Component} from 'react';
+import React, { useState } from 'react';
 import Button from './common/Button';
 import Card from './common/Card';
 import Input from './common/Input';
 import './newItem.css';
 
-class NewItem extends Component {
-  state = {
-    value: '',
-  };
+// import Button from '@material-ui/core/Button';
 
-  handleChange = event => {
-    this.setState({
-      value: event.target.value,
-    });
-  };
-
-  onAddItem = () => {
-    this.props.addItem({
-      name: this.state.value,
+const NewItem = ({ addItem }) => {
+  const [value, setValue] = useState('');
+  const handleChange = event => setValue(event.target.value);
+  const resetValue = () => setValue('');
+  const onAddItem = () => {
+    addItem({
+      name: value,
       id: 5,
       grabbed: false,
     });
-    this.setState({
-      value: '',
-    });
+    resetValue();
   };
 
-  render() {
-    return (
-      <Card>
-        <div className="new-item-container">
-          <div className="new-item-input">
-            <Input
-              type="text"
-              onChange={this.handleChange}
-              value={this.state.value}
-            />
-          </div>
-          <div className="new-item-add">
-            <Button onClick={this.onAddItem} color="secondary">
-              Add
-            </Button>
-          </div>
+  return (
+    <Card>
+      <div className="new-item-container">
+        <div className="new-item-input">
+          <Input type="text" onChange={handleChange} value={value} />
         </div>
-      </Card>
-    );
-  }
-}
+        <div className="new-item-add">
+          <Button
+            onClick={onAddItem}
+            color="secondary"
+            disabled={!value.length}>
+            Add
+          </Button>
+        </div>
+      </div>
+    </Card>
+  );
+};
 
 export default NewItem;

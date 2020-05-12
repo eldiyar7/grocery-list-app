@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.2.1",
+    "clsx": "^1.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-jss": "^10.1.1",
     "react-scripts": "3.0.1"
   },
   "scripts": {
