@@ -1,8 +1,9 @@
-import React from 'react'
-import Icon from './Icon'
+import React from 'react';
+import Icon from './Icon';
 
-import './checkbox.css'
+import './checkbox.css';
 
+// TODO: use render props
 function Checkbox(props) {
   return (
     <span className="checkbox">
@@ -13,7 +14,7 @@ function Checkbox(props) {
         <Icon name="checkbox-unchecked" className="checkbox-icon" />
       )}
     </span>
-  )
+  );
 }
 
-export default Checkbox
+export default Checkbox;

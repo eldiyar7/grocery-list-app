@@ -34,7 +34,6 @@ class Items extends Component {
           searchTerm={this.state.searchTerm}
           onChange={this.updateSearchTerm}
         />
-        {console.log(items.filter(item => item.grabbed))}
         <Card className="items-card">
           {items
             .filter(item =>

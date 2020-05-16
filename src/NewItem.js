@@ -4,6 +4,8 @@ import Card from './common/Card';
 import Input from './common/Input';
 import './newItem.css';
 
+import uniqueId from './utilities/uniqueId';
+
 // import Button from '@material-ui/core/Button';
 
 const NewItem = ({ addItem }) => {
@@ -13,7 +15,7 @@ const NewItem = ({ addItem }) => {
   const onAddItem = () => {
     addItem({
       name: value,
-      id: 5,
+      id: uniqueId(),
       grabbed: false,
     });
     resetValue();
