@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import './icon.css'
+import './icon.css';
 
 const getSvgAttributes = (name, props) => {
   switch (name) {
@@ -13,7 +13,7 @@ const getSvgAttributes = (name, props) => {
           />
         ),
         viewBox: '0 0 24 24',
-      }
+      };
     case 'checkbox-unchecked':
       return {
         path: (
@@ -23,7 +23,7 @@ const getSvgAttributes = (name, props) => {
           />
         ),
         viewBox: '0 0 24 24',
-      }
+      };
 
     case 'search':
       return {
@@ -34,20 +34,19 @@ const getSvgAttributes = (name, props) => {
           />
         ),
         viewBox: '0 0 24 24',
-      }
+      };
     default:
-      return <path />
+      return <path />;
   }
-}
+};
 
-function Icon({name, className, ...props}) {
-  console.log({name, ...props})
-  const {viewBox, path} = getSvgAttributes(name)
+function Icon({ name, className, ...props }) {
+  const { viewBox, path } = getSvgAttributes(name);
   return (
     <svg {...props} viewBox={viewBox} className={`svg ${className}`}>
       {path}
     </svg>
-  )
+  );
 }
 
-export default Icon
+export default Icon;

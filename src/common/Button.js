@@ -70,8 +70,6 @@ function Button(props) {
   const classes = useStyles(props);
   const { disabled = false } = props;
 
-  console.log('disabled', disabled);
-
   return (
     <button
       className={clsx(

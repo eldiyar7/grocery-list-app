@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Items } from './Items';
 import NewItem from './NewItem';
 import Title from './common/Title';
 
-const groceries = [
-  { name: 'apple', id: 1, grabbed: false },
-  { name: 'milk', id: 2, grabbed: false },
-  { name: 'water', id: 3, grabbed: false },
-  { name: 'potatoes', id: 4, grabbed: false },
-];
+import localforage from 'localforage';
 
 const App = () => {
-  const [items, setItem] = useState(groceries);
+  const [items, setItem] = useState([]);
+
+  useEffect(() => {
+    localforage.getItem('items').then(setItem);
+  }, []);
 
   const addItem = item => {
     setItem([...items, item]);
+    localforage.setItem('items', [...items, item]);
   };
 
   const checkOffItem = selectedItem => {
@@ -26,10 +26,15 @@ const App = () => {
       }
     });
     setItem(updatedItems);
+    localforage.setItem('items', [...updatedItems]);
   };
 
   const removeItem = selectedItem => {
-    setItem(items.filter(item => item.id !== selectedItem.id));
+    const filteredItems = items.filter(
+      item => item.id !== selectedItem.id,
+    );
+    setItem(filteredItems);
+    localforage.setItem('items', [...filteredItems]);
   };
 
   const ungrabbedItems = items.filter(item => !item.grabbed);
